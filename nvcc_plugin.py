@@ -52,6 +52,7 @@ class NVCCPlugin(ipym.Magics):
             try:
                 self.compile(file_path)
                 output = self.run(file_path, timeit=args.timeit)
+                print(output)
             except subprocess.CalledProcessError as e:
                 print(e.output.decode("utf8"))
                 output = None
